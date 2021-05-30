@@ -57,3 +57,14 @@ form button:hover {
   background: #0b1c53;
   color: white;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list {
+  min-width: 30%;
+  list-style: none;
+}

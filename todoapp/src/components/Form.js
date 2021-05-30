@@ -10,7 +10,7 @@ function Form() {
         className="todo-input"
       />
       <button id="btn" className="todo-button" type="submit">
-        <i className="fas fa-plus-square"></i>
+        <i className="fa fa-plus-circle"></i>
       </button>
     </form>
   );
