@@ -21,7 +21,7 @@ function App() {
         todos={todos}
         setTodos={setTodos}
       />
-      <List input={input} />
+      <List todos={todos} />
     </div>
   );
 }
