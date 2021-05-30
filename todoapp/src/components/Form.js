@@ -3,11 +3,15 @@ import { v4 as uuidv4 } from "uuid";
 
 function Form(props) {
   const { input, setInput, todos, setTodos } = props;
+
+  //Function responsible for grabbing the inputs from the DOM and setting the PROPS state
   const inputHandler = (e) => {
     const input = e.target.value;
     setInput(input);
   };
 
+  //Function responsible for submitting the input to the TODO List array by creating several objects
+  //All tasks/TODOs objects will contain an unique ID generated through UUID package and other attributes.
   const submitTODOHandler = (e) => {
     e.preventDefault();
 
