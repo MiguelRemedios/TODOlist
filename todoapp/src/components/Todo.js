@@ -1,7 +1,7 @@
 import React from "react";
 
 const Todo = (props) => {
-  const { todoText, todos, setTodos, todo } = props;
+  const { todoText, todos, setTodos, todo, input, setInput } = props;
 
   //Event Handlers
   //Function that handles the deletion of the pretended element when clicked
@@ -10,7 +10,10 @@ const Todo = (props) => {
   };
 
   const editTODOHandler = () => {
-    console.log("EDIT FUNCTION");
+    const text = todo.text;
+    setInput(text);
+    const iconBtn = document.getElementById("submitIcon");
+    iconBtn.className = "fas fa-edit";
   };
 
   const completeTODOHandler = () => {

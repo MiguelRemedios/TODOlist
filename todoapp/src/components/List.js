@@ -2,7 +2,7 @@ import React from "react";
 import Todo from "./Todo";
 
 const List = (props) => {
-  const { todos, setTodos } = props;
+  const { todos, setTodos, input, setInput } = props;
 
   return (
     <div className="container">
@@ -14,6 +14,8 @@ const List = (props) => {
             todos={todos}
             setTodos={setTodos}
             todo={todo}
+            input={input}
+            setInput={setInput}
           />
         ))}
       </ul>

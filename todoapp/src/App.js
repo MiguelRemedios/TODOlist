@@ -21,7 +21,12 @@ function App() {
         todos={todos}
         setTodos={setTodos}
       />
-      <List todos={todos} setTodos={setTodos} />
+      <List
+        todos={todos}
+        setTodos={setTodos}
+        input={input}
+        setInput={setInput}
+      />
     </div>
   );
 }
