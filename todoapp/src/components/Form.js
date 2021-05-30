@@ -36,7 +36,7 @@ function Form(props) {
         type="submit"
         onClick={submitTODOHandler}
       >
-        <i className="fa fa-plus-circle"></i>
+        <i className="fa fa-plus-circle" id="submitIcon"></i>
       </button>
     </form>
   );
