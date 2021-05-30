@@ -119,3 +119,9 @@ form button:hover {
 .fa-check {
   pointer-events: none;
 }
+
+.completed {
+  font-style: oblique;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
