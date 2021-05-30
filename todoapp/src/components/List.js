@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Todo from "./Todo";
 
 const List = (props) => {
   const { todos, setTodos, input, setInput } = props;
+
+  useEffect(() => {
+    const temp = localStorage.getItem("todos");
+    const loadedTodos = JSON.parse(temp);
+    if (loadedTodos) {
+      setTodos(loadedTodos);
+    }
+  }, []);
+
+  useEffect(() => {
+    const temp = JSON.stringify(todos);
+    localStorage.setItem("todos", temp);
+  }, [todos]);
 
   return (
     <div className="container">
