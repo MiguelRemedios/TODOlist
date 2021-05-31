@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      <header />
       <header>
         <h1>TODO LIST</h1>
       </header>
@@ -21,12 +20,15 @@ function App() {
         todos={todos}
         setTodos={setTodos}
       />
+      <h3>TASKS</h3>
+      <hr />
       <List
         todos={todos}
         setTodos={setTodos}
         input={input}
         setInput={setInput}
       />
+      <header />
     </div>
   );
 }
