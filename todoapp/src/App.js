@@ -38,9 +38,13 @@ function App() {
         todos={todos}
         setTodos={setTodos}
       />
-      <h3 id="tag">TASKS</h3>
       <div className="containerBtn">
-        <button onClick={sortList}>Sort list</button>
+        <h3 id="tag" onClick={sortList}>
+          TASKS
+        </h3>
+        <button className="sort-btn" onClick={sortList}>
+          <i class="fa fa-sort" aria-hidden="true"></i>
+        </button>
       </div>
       <hr />
       <List
