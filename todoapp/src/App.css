@@ -24,7 +24,7 @@ hr {
   width: 30%;
   margin-top: 0rem;
   margin: auto;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   display: block;
   border: none;
   color: var(--white);
@@ -208,4 +208,27 @@ form button:hover {
 #tag {
   cursor: pointer;
   user-select: none;
+}
+
+.label-container {
+  display: flex;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: var(--dark);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-right: 3rem;
+}
+
+/* Hide the browser's default checkbox */
+.label-container input {
+  margin-right: 1rem;
 }

@@ -75,7 +75,7 @@ function App() {
         </button>
       </div>
       <hr />
-      <div>
+      <label id="label" className="label-container" htmlFor="filter">
         <input
           onChange={statusHandler}
           type="checkbox"
@@ -84,10 +84,8 @@ function App() {
           value="filter"
           unchecked="true"
         />
-        <label className="label" htmlFor="filter">
-          Hide/Show Completed
-        </label>
-      </div>
+        Hide Completed
+      </label>
       <List
         todos={todos}
         setTodos={setTodos}
