@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Todo = (props) => {
+  //Props destructuring
   const { todoText, todos, setTodos, todo } = props;
 
   //state that will store the ID that will be edited
@@ -21,7 +22,6 @@ const Todo = (props) => {
       }
       return todo;
     });
-
     setTodos(updatedTodos);
     setTodoEditing(null);
     setEditingTODO("");

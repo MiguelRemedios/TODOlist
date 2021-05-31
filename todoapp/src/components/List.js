@@ -2,8 +2,11 @@ import React, { useEffect } from "react";
 import Todo from "./Todo";
 
 const List = (props) => {
+  //Props destructuring
   const { todos, setTodos, input, setInput } = props;
 
+  //Loads TODOS that are stored inside the browser localstorage into the component LIST
+  //allowing the current TODOs to not be lost
   useEffect(() => {
     const temp = localStorage.getItem("todos");
     const loadedTodos = JSON.parse(temp);
@@ -12,6 +15,8 @@ const List = (props) => {
     }
   }, []);
 
+  //Sets an item into the browser localStorage that will store the array of objects (TODOS)
+  //created by the user, allowing that, when the page is refresh the states won't be lost.
   useEffect(() => {
     const temp = JSON.stringify(todos);
     localStorage.setItem("todos", temp);
