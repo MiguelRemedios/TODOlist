@@ -9,18 +9,25 @@ function App() {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
 
+  const sortListAZ = (e) => {
+    e.preventDefault();
+    const sortedTODOS = todos.sort((a, b) => (a.text > b.text ? 1 : -1));
+    setTodos(sortedTODOS);
+  };
+
   return (
     <div className="App">
-      <header>
-        <h1>TODO LIST</h1>
-      </header>
+      <header />
       <Form
         input={input}
         setInput={setInput}
         todos={todos}
         setTodos={setTodos}
       />
-      <h3>TASKS</h3>
+      <h3 id="tag">TASKS</h3>
+      <div className="containerBtn">
+        <button onClick={sortListAZ}>Click to test</button>
+      </div>
       <hr />
       <List
         todos={todos}
