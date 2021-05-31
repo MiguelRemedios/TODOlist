@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 //Components import
 import Form from "./components/Form";
@@ -8,8 +8,9 @@ function App() {
   //states and set functions for the typed input as well as for the todos array
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
-  const [defaultList, setDefaultList] = useState([]);
   const [counterValue, setCounterValue] = useState(0);
+  const [status, setStatus] = useState("all");
+  const [filteredTODOS, setFilteredTODOS] = useState([]);
 
   //Function that sorts the elements/TODOS text property in descending alphabetical order (A-Z)
   const sortList = () => {
@@ -29,6 +30,33 @@ function App() {
     }
   };
 
+  //Function responsible of allowing to manange hook status when checkbox is clicked or not
+  const statusHandler = (e) => {
+    if (document.getElementById("filter").checked) {
+      setStatus(e.target.value);
+    } else {
+      setStatus("all");
+    }
+  };
+
+  //Function responsible for filtering the main TODOS array into a new array/ state that only contains the completed TODOS
+  const filterHandler = () => {
+    switch (status) {
+      case "filter":
+        setFilteredTODOS(todos.filter((todo) => todo.completed === false));
+        break;
+      default:
+        setFilteredTODOS(todos);
+        break;
+    }
+  };
+
+  //Hook responsible for running the filteredHandler after the state rendering
+  //meaning that whenver a state changes it runs the specific function
+  useEffect(() => {
+    filterHandler();
+  }, [todos, status]);
+
   return (
     <div className="App">
       <header />
@@ -38,16 +66,34 @@ function App() {
         todos={todos}
         setTodos={setTodos}
       />
-      <h3 id="tag">TASKS</h3>
       <div className="containerBtn">
-        <button onClick={sortList}>Sort list</button>
+        <h3 id="tag" onClick={sortList}>
+          TASKS
+        </h3>
+        <button className="sort-btn" onClick={sortList}>
+          <i className="fa fa-sort" aria-hidden="true"></i>
+        </button>
       </div>
       <hr />
+      <div>
+        <input
+          onChange={statusHandler}
+          type="checkbox"
+          id="filter"
+          name="filter"
+          value="filter"
+          unchecked="true"
+        />
+        <label className="label" htmlFor="filter">
+          Hide/Show Completed
+        </label>
+      </div>
       <List
         todos={todos}
         setTodos={setTodos}
         input={input}
         setInput={setInput}
+        filteredTODOS={filteredTODOS}
       />
       <header />
     </div>
