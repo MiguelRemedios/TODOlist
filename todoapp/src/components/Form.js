@@ -14,6 +14,12 @@ function Form(props) {
   //All tasks/TODOs objects will contain an unique ID generated through UUID package and other attributes.
   const submitTODOHandler = (e) => {
     e.preventDefault();
+    if (input.length == 0) {
+      const placeholder = (document.getElementById("input").placeholder =
+        "Please enter a valid task!");
+      return placeholder;
+    }
+    document.getElementById("input").placeholder = "Add a task to your list";
 
     const UUID = uuidv4();
     setTodos([...todos, { id: UUID, text: input, completed: false }]);

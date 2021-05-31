@@ -10,13 +10,47 @@ body {
   min-height: 100vh;
 }
 
+h3 {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 25px;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  pointer-events: none;
+}
+
+hr {
+  width: 30%;
+  margin-top: 0rem;
+  margin: auto;
+  margin-bottom: 2.5rem;
+  display: block;
+  border: none;
+  color: white;
+  height: 1px;
+  background: rgb(255, 255, 255);
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(rgb(255, 255, 255)),
+    to(#0b1c53)
+  );
+}
+
 header {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  margin-top: 6rem;
+  margin-bottom: 1rem;
 }
 
 header,
 form {
-  min-height: 15vh;
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,4 +176,19 @@ form button:hover {
   font-style: oblique;
   text-decoration: line-through;
   opacity: 0.5;
+}
+
+#editInput {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  border: none;
+  width: 27rem;
+  background: rgb(255, 255, 255);
+}
+
+.containerBtn {
+  text-align: center;
+  border: none;
+  width: 300px;
+  padding-top: 1px;
 }

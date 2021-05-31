@@ -47,6 +47,7 @@ const Todo = (props) => {
 
         {todoEditing === todo.id ? (
           <input
+            id="editInput"
             onChange={(e) => setEditingTODO(e.target.value)}
             value={editingTODO}
             type="text"
