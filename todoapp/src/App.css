@@ -209,8 +209,3 @@ form button:hover {
   cursor: pointer;
   user-select: none;
 }
-
-.test {
-  width: 300px;
-  height: 300px;
-}

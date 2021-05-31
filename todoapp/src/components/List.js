@@ -3,7 +3,7 @@ import Todo from "./Todo";
 
 const List = (props) => {
   //Props destructuring
-  const { todos, setTodos, input, setInput } = props;
+  const { todos, setTodos, input, setInput, filteredTODOS } = props;
 
   //Loads TODOS that are stored inside the browser localstorage into the component LIST
   //allowing the current TODOs to not be lost
@@ -25,7 +25,7 @@ const List = (props) => {
   return (
     <div className="container">
       <ul className="list">
-        {todos.map((todo) => (
+        {filteredTODOS.map((todo) => (
           <Todo
             key={todo.id}
             todoText={todo.text}
