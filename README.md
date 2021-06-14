@@ -1,5 +1,5 @@
 # TODO List App 📝
-This a full stack web application that consists on providing to its users a bunch of different ways to allow them to better organise their barehands tasks by always having an updatable TODO task list.
+This is a front-end web application that consists of providing to its users a bunch of different ways to allow them to better organise their bare hand's tasks by always having an updatable TODO task list.
 
 ## Final Result
 <p align="center">
